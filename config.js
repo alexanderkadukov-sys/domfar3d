@@ -1,0 +1,1 @@
+window.DOMFAR_CONFIG = { phone: '79190461316', secondPhone: '79858236383', telegram: 'https://t.me/+79190461316', channel: 'https://t.me/Avtobiled', maxProfile: 'https://max.ru/u/f9LHodD0cOIs7oiIC61NMB1pP1hTsj7XwSlt5KfP4IIwLWpLJttfnnFUb8E' };
