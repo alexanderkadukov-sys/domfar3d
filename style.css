@@ -7,3 +7,88 @@
 @media(max-width:1100px){.header nav{gap:14px;font-size:12px}.hero h1{font-size:49px}.hero-visual{height:580px}.hero .actions{gap:18px}.service-card{padding:24px}.service-card h3{font-size:22px}.service-card>p{min-height:86px}.service-kicker{font-size:8px}.service-bottom .button{font-size:11px}.videos-heading h3{font-size:29px}.contacts h2{font-size:38px}}
 @media(max-width:800px){.hero h1{font-size:62px}.hero-visual{height:420px}.service-cards{grid-template-columns:1fr;gap:16px}.service-card{padding:30px}.service-card h3{font-size:28px}.service-card h3 br{display:none}.service-card>p{min-height:0;font-size:14px;max-width:550px}.service-card li{font-size:13px}.service-bottom{display:flex;gap:25px;align-items:center;justify-content:space-between}.service-bottom>span{min-height:0;margin:0;max-width:250px}.service-bottom .button{width:auto;min-width:230px;font-size:12px}.service-kicker{font-size:9px;margin-bottom:18px}.videos-heading{align-items:flex-start;gap:22px}.videos-heading .text-link{white-space:normal}.proof-cta{grid-template-columns:1fr;gap:20px;padding:28px}.proof-cta .button{justify-self:start}.selection h2{font-size:36px}.contact-grid{gap:40px}.contacts h2{font-size:46px}}
 @media(max-width:500px){.hero h1{font-size:42px;line-height:1.09;letter-spacing:-1.9px}.hero .lead{font-size:19px}.hero-visual{height:340px}.hero-description{font-size:12px}.hero-points{font-size:11px;margin-bottom:23px}.hero .actions{gap:18px}.hero .actions .button{width:100%}.hero .actions .text-link{font-size:12px}.hero-meta{flex-wrap:wrap;gap:8px;font-size:9px}.hero-meta span+span:before{margin-right:8px}.visual-caption strong{font-size:17px}.services h2{font-size:30px}.services .section-heading>p br{display:none}.service-card{padding:25px 22px}.service-card h3{font-size:26px}.service-bottom{display:block}.service-bottom>span{margin-bottom:17px;max-width:none}.service-bottom .button{width:100%;min-width:0}.service-note{font-size:11px;line-height:1.8}.product h3{font-size:23px}.product p{font-size:13px}.videos-heading h3{font-size:28px}.videos-heading p:not(.eyebrow){font-size:12px}.videos figcaption strong{font-size:15px}.proof-cta{padding:26px 22px;margin-top:25px}.proof-cta h3{font-size:24px}.proof-cta p{font-size:12px}.proof-cta .button{width:100%}.selection h2{font-size:31px}.selection h2 br{display:none}.quote-benefits li{font-size:12px}.contacts h2{font-size:34px;letter-spacing:-1.2px}.contact-intro{font-size:13px}}
+
+/* Typography fix: legible Cyrillic on desktop and mobile */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+h1, h2, h3,
+.hero h1, .services h2, .service-card h3, .product h3,
+.craft-copy h2, .videos-heading h3, .proof-cta h3,
+.selection h2, .contacts h2, .location h3,
+.brand, .big-phone, .second-phone, .specs strong,
+.order-terms strong {
+  letter-spacing: 0;
+}
+h1, .hero h1 { line-height: 1.14; }
+h2, .services h2, .craft-copy h2, .selection h2,
+.contacts h2 { line-height: 1.2; }
+h3, .service-card h3, .product h3, .videos-heading h3,
+.proof-cta h3 { line-height: 1.3; }
+.eyebrow, .hero .eyebrow, .service-kicker,
+.visual-top, .tag, .gallery-item > span,
+.location-label, .compatibility > span, .craft-image span {
+  letter-spacing: .035em;
+  line-height: 1.5;
+}
+.lead, .hero .lead { line-height: 1.52; }
+.hero-description, .section-heading > p,
+.service-card > p, .service-card li, .product p,
+.steps p, .craft-item p, details p, .contact-intro {
+  line-height: 1.7;
+}
+.service-kicker { font-size: 11px; }
+.service-card li { font-size: 14px; }
+.service-card > p { font-size: 14px; }
+.service-bottom > span, .service-note, .selection .quote-note {
+  font-size: 12px;
+  line-height: 1.6;
+}
+.hero-points, .quote-benefits li { font-size: 13px; }
+.specs span { font-size: 12px; max-width: 145px; }
+.gallery-item > span { font-size: 11px; }
+.videos figcaption p { font-size: 13px; }
+.eyebrow, .hero .eyebrow { font-size: 11px; }
+@media (max-width: 800px) {
+  .hero h1 { letter-spacing: 0; }
+  .service-kicker { font-size: 11px; }
+  .service-bottom > span { font-size: 12px; }
+}
+@media (max-width: 500px) {
+  .hero h1 {
+    font-size: clamp(35px, 9vw, 42px);
+    line-height: 1.17;
+    letter-spacing: 0;
+  }
+  h2, .services h2, .craft-copy h2, .selection h2 {
+    font-size: clamp(28px, 7.3vw, 34px);
+    letter-spacing: 0;
+    line-height: 1.23;
+  }
+  .contacts h2 {
+    font-size: clamp(30px, 7.7vw, 36px);
+    letter-spacing: 0;
+    line-height: 1.23;
+  }
+  .hero .eyebrow, .selection .eyebrow, .service-kicker { font-size: 11px; }
+  .eyebrow { font-size: 11px; }
+  .visual-top { font-size: 10px; }
+  .hero-description, .hero-points,
+  .videos-heading p:not(.eyebrow), .proof-cta p,
+  .service-note { font-size: 13px; }
+  .hero-meta { font-size: 11px; }
+  .specs span { font-size: 12px; max-width: none; }
+  .service-card li, .service-card > p { font-size: 14px; }
+  .faq summary { font-size: 15px; }
+  .faq details p { font-size: 13px; }
+  .steps p, .quote-benefits li { font-size: 13px; }
+  .gallery-item > span { font-size: 10px; }
+  .telegram-qr > span, .telegram-qr small { font-size: 11px; }
+  footer > span { font-size: 11px; }
+}
