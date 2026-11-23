@@ -8,7 +8,20 @@ document.querySelectorAll('dialog').forEach(dialog=>{
  dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
  dialog.addEventListener('close',()=>{document.body.style.overflow='';previousFocus?.focus();});
 });
-document.querySelectorAll('[data-image]').forEach(button=>button.addEventListener('click',()=>{$('#lightbox-image').src=button.dataset.image;$('#lightbox-image').alt=button.dataset.caption;$('#lightbox-caption').textContent=button.dataset.caption;showDialog($('#lightbox'));}));
+const galleryPhotos=[...document.querySelectorAll('[data-image]')];
+let photoIndex=0;
+function displayPhoto(index){
+ photoIndex=(index+galleryPhotos.length)%galleryPhotos.length;
+ const button=galleryPhotos[photoIndex];
+ $('#lightbox-image').src=button.dataset.image;
+ $('#lightbox-image').alt=button.dataset.caption;
+ $('#lightbox-caption').textContent=button.dataset.caption;
+ $('#photo-counter').textContent=(photoIndex+1)+' / '+galleryPhotos.length;
+}
+galleryPhotos.forEach((button,index)=>button.addEventListener('click',()=>{displayPhoto(index);showDialog($('#lightbox'));}));
+$('#photo-prev').addEventListener('click',()=>displayPhoto(photoIndex-1));
+$('#photo-next').addEventListener('click',()=>displayPhoto(photoIndex+1));
+$('#lightbox').addEventListener('keydown',event=>{if(event.key==='ArrowLeft'||event.key==='ArrowRight'){event.preventDefault();displayPhoto(photoIndex+(event.key==='ArrowRight'?1:-1));}});
 document.querySelectorAll('[data-car]').forEach(button=>button.addEventListener('click',()=>{$('#car').value=button.dataset.car;$('#select').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});$('#car').focus({preventScroll:true});}));
 function orderMessage(){return 'Здравствуйте! Хочу узнать стоимость оптики DomFar3D.\nЗадача: '+$('#service').value+'\nАвтомобиль: '+$('#car').value+'\n'+$('#details').value.trim()+'\nПодскажите совместимость, комплектацию, наличие и стоимость.';}
 function openWhatsApp(text){window.open('https://wa.me/'+config.phone+'?text='+encodeURIComponent(text),'_blank','noopener,noreferrer');}
@@ -21,3 +34,4 @@ document.querySelectorAll('video').forEach(video=>video.addEventListener('play',
 $('#year').textContent=new Date().getFullYear();
 
 document.querySelectorAll('[data-service]').forEach(link=>link.addEventListener('click',()=>{$('#service').value=link.dataset.service;$('#service').focus({preventScroll:true});}));
+

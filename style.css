@@ -92,3 +92,12 @@ h3, .service-card h3, .product h3, .videos-heading h3,
   .telegram-qr > span, .telegram-qr small { font-size: 11px; }
   footer > span { font-size: 11px; }
 }
+
+
+/* Uploaded photo and video collection */
+.media-heading{margin:42px 0 22px}.media-heading h3{font-size:24px;line-height:1.3;margin-bottom:10px}.media-heading p{font-size:14px;color:var(--muted);margin:0}
+.gallery-extra{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.gallery-extra .gallery-item{height:360px}.gallery-extra .gallery-item img{object-fit:contain;background:#171a16}.gallery-extra .gallery-item>span{font-size:12px;line-height:1.4;letter-spacing:0;text-transform:none;gap:12px;padding:55px 16px 16px}.gallery-extra .gallery-item b{font-size:20px}
+.videos{grid-template-columns:repeat(3,minmax(0,1fr))}.videos video{height:380px;object-fit:contain}.video-file-link{display:block;color:var(--muted);font-size:13px;text-decoration:underline;text-underline-offset:4px;margin-top:10px}.video-file-link:hover{color:var(--lime)}
+.lightbox-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:4px 12px 10px}.lightbox-controls button{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:10px 14px;font-size:14px;min-height:44px}.lightbox-controls button:hover{border-color:var(--lime)}#photo-counter{font-size:14px;color:var(--muted);white-space:nowrap}.lightbox img{max-height:68dvh}
+@media(max-width:800px){.gallery-extra{grid-template-columns:repeat(2,minmax(0,1fr))}.gallery-extra .gallery-item{height:320px}.videos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.gallery-extra,.videos{grid-template-columns:minmax(0,1fr)}.gallery-extra .gallery-item{height:360px}.videos video{height:420px}.lightbox-controls{gap:8px;padding-inline:0}.lightbox-controls button{padding:10px;font-size:13px}}
