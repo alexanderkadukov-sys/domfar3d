@@ -47,11 +47,11 @@
     float slope=(q.y-beamLamps.y)/max(d,.1);
     float cutoff=1.-smoothstep(-.015,-.011,slope);
     float below=smoothstep(-.21,-.075,slope);
-    float width=max(d*.61,.12);
+    float width=max(d*.52,.12);
     float left=(q.x-beamLamps.x)/width;float right=(q.x+beamLamps.x)/width;
     float sides=exp(-pow(abs(left),6.))+exp(-pow(abs(right),6.));
     float reach=smoothstep(.1,1.,d)*(1.-smoothstep(32.,46.,d));
-    totalEmissiveRadiance+=vec3(.73,.87,1.)*sides*cutoff*below*reach*1.85;`);
+    totalEmissiveRadiance+=vec3(.73,.87,1.)*sides*cutoff*below*reach*3.5;`);
   };
  }
  projectedSurface(wallMat);wallMat.needsUpdate=true;
@@ -59,7 +59,7 @@
   // A broad, shallow wedge with a flat upper edge, rather than a circular cone.
   const geo=new T.BufferGeometry();
   const near=[[-.09,0,0],[.09,0,0],[-.09,-.035,0],[.09,-.035,0]];
-  const far=[[-12,-.32,24],[12,-.32,24],[-12,-4.1,24],[12,-4.1,24]];
+  const far=[[-10.2,-.32,24],[10.2,-.32,24],[-10.2,-4.1,24],[10.2,-4.1,24]];
   const vertices=near.concat(far).flat();geo.setAttribute('position',new T.Float32BufferAttribute(vertices,3));
   geo.setIndex([0,4,1,1,4,5,2,3,6,3,7,6,0,2,4,2,6,4,1,5,3,3,5,7]);
   geo.setAttribute('uv',new T.Float32BufferAttribute([0,0,1,0,0,0,1,0,0,1,1,1,0,1,1,1],2));geo.computeVertexNormals();
