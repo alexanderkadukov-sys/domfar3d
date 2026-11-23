@@ -115,3 +115,5 @@ h1,h2,h3,.hero h1,.services h2,.service-card h3,.selection h2,.contacts h2{word-
 @media(max-width:800px){.showroom-label,.showroom-bottom{left:28px;right:28px}.service-card h3{font-size:28px}}
 @media(max-width:500px){.jeep-showcase{height:430px}.showroom-label{top:20px;left:20px;right:20px;font-size:10px;letter-spacing:.065em}.showroom-bottom{bottom:20px;left:20px;right:20px;align-items:center;gap:12px}.showroom-bottom p{font-size:13px}.jeep-toggle{font-size:12px;padding:10px}.service-card h3{font-size:clamp(24px,6.7vw,28px);line-height:1.32}}
 @media(prefers-reduced-motion:reduce){.jeep-fallback{transition:none}}
+
+.model-credit{font-size:11px;line-height:1.6;color:var(--muted);padding-block:0 25px;margin:0 auto}.model-credit a{text-decoration:underline;text-underline-offset:3px}.jeep-toggle:disabled{opacity:.5;cursor:wait}@media(max-width:800px){.model-credit{padding-bottom:85px}}
