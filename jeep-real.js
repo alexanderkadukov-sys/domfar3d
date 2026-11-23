@@ -161,7 +161,7 @@
   model.updateMatrixWorld(true);
   const lensBounds=new T.Box3();model.traverse(o=>{if(o.isMesh&&/Kuzov_f1/.test(o.name)){o.geometry.computeBoundingBox();lensBounds.union(o.geometry.boundingBox.clone().applyMatrix4(vehicleInverse.clone().multiply(o.matrixWorld)));}});
   const lensCenter=lensBounds.getCenter(new T.Vector3());
-  addHeadlamps(lensBounds.max.z+.025,lensCenter.y,(lensBounds.max.x-lensBounds.min.x)*.43);loaded=true;toggle.disabled=false;stage.dataset.modelState='ready';stage.classList.add('jeep-ready');stage.querySelector('.jeep-fallback').setAttribute('aria-hidden','true');render();
+  addHeadlamps(lensBounds.max.z+.09,lensCenter.y,(lensBounds.max.x-lensBounds.min.x)*.43);loaded=true;toggle.disabled=false;stage.dataset.modelState='ready';stage.classList.add('jeep-ready');stage.querySelector('.jeep-fallback').setAttribute('aria-hidden','true');render();
  },undefined,()=>{stage.dataset.modelState='error';toggle.hidden=true;});
  function frame(now){requestAnimationFrame(frame);const dt=Math.min((now-previous)/1000,.1);previous=now;if(!loaded||paused||!visible||document.hidden)return;angle=(angle+dt*Math.PI*2/40)%(Math.PI*2);if(now-lastDraw>1000/30){lastDraw=now;render();}}
  resize();requestAnimationFrame(frame);
