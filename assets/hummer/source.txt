@@ -1,0 +1,4 @@
+Hummer H3 model source
+https://github.com/o-theophilus/mv_hummer_h3
+Source revision: 5913526a5ec74b33880a7e6d394dacfa05599f6a
+Adaptations: standard glTF materials, black paint, embedded resized textures, original demo environment removed.

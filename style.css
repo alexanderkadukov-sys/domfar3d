@@ -117,3 +117,6 @@ h1,h2,h3,.hero h1,.services h2,.service-card h3,.selection h2,.contacts h2{word-
 @media(prefers-reduced-motion:reduce){.jeep-fallback{transition:none}}
 
 .model-credit{font-size:11px;line-height:1.6;color:var(--muted);padding-block:0 25px;margin:0 auto}.model-credit a{text-decoration:underline;text-underline-offset:3px}.jeep-toggle:disabled{opacity:.5;cursor:wait}@media(max-width:800px){.model-credit{padding-bottom:85px}}
+
+/* Hummer showroom controls */
+.showroom-controls{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.jeep-wall{border:1px solid #586154;border-radius:6px;background:rgba(12,17,18,.85);color:#f4f6ee;padding:11px 14px;font:inherit;font-size:12px;cursor:pointer}.jeep-wall:hover{border-color:#d3f849}.jeep-wall:focus-visible{outline:2px solid #d3f849;outline-offset:3px}@media(max-width:600px){.showroom-bottom{align-items:flex-start;gap:12px}.showroom-controls{max-width:160px}.jeep-wall,.jeep-toggle{font-size:11px;padding:9px 11px}}
