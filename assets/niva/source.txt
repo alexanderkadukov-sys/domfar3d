@@ -1,0 +1,6 @@
+Lada Niva by tiunov.se
+https://sketchfab.com/3d-models/lada-niva-5a83c0cc63df418fa5bb9a2bf98dc9a6
+CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
+Attribution and licence are embedded in the glTF asset metadata.
+Optimised distribution: https://github.com/Spoon221/exploded-niva-concept/blob/main/public/lada_niva.opt.glb
+DomFar3D adaptations: red/black paint inspired by the supplied reference, wheel scale, material tuning and dark scene with moving headlamps.
