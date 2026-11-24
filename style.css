@@ -242,3 +242,39 @@ h1,h2,h3,.hero h1,.services h2,.service-card h3,.selection h2,.contacts h2{word-
     flex-wrap: wrap;
   }
 }
+
+#visitor-counter {
+  margin-top: 16px;
+}
+.visitor-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.visitor-counter-icon {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  color: var(--lime);
+}
+.visitor-counter-copy {
+  display: grid;
+  gap: 2px;
+  font-size: 14px;
+  line-height: 1.25;
+}
+.visitor-counter-copy small {
+  color: var(--muted);
+  font-size: 12px;
+}
+#visitor-total {
+  margin-left: 4px;
+  color: var(--lime);
+  font-size: 22px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}

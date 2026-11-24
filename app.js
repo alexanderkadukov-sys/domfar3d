@@ -97,3 +97,43 @@ $('#year').textContent=new Date().getFullYear();
 
 document.querySelectorAll('[data-service]').forEach(link=>link.addEventListener('click',()=>{$('#service').value=link.dataset.service;$('#service').focus({preventScroll:true});}));
 
+
+async function showVisitorCount() {
+ const counter = $('#visitor-counter');
+ if (!counter) return;
+
+ const storageKey = 'domfar3d-visitor-id';
+ let visitorId = null;
+ try {
+  const savedId = localStorage.getItem(storageKey);
+  if (/^[a-f0-9]{8}-(?:[a-f0-9]{4}-){3}[a-f0-9]{12}$/i.test(savedId ?? '')) {
+   visitorId = savedId;
+  } else {
+   const newId = crypto.randomUUID();
+   localStorage.setItem(storageKey, newId);
+   visitorId = newId;
+  }
+ } catch {
+  // Read the total without counting browsers that cannot retain an ID.
+ }
+
+ try {
+  const response = await fetch("https://jqqqpvhtqdvrltkgivlt.supabase.co/rest/v1/rpc/domfar_visit", {
+   method: 'POST',
+   headers: {
+    apikey: "sb_publishable_JRewVONrJr4D2n_HgFGPYA_SN3kcqpc",
+    'Content-Type': 'application/json'
+   },
+   body: JSON.stringify({ p_visitor_id: visitorId })
+  });
+  if (!response.ok) return;
+  const total = await response.json();
+  if (!Number.isSafeInteger(total) || total < 0) return;
+  $('#visitor-total').textContent = new Intl.NumberFormat('ru-RU').format(total);
+  counter.hidden = false;
+ } catch {
+  // Keep the rest of the site usable if the counter is unavailable.
+ }
+}
+
+showVisitorCount();
