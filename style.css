@@ -180,10 +180,73 @@ h1,h2,h3,.hero h1,.services h2,.service-card h3,.selection h2,.contacts h2{word-
   border-radius: var(--radius);
   scroll-snap-align: start;
 }
-.photo-carousel-track .gallery-item:first-child img {
+.photo-carousel-track .gallery-item:nth-child(2) img {
   object-position: 50% 67%;
 }
 .photo-carousel-track .gallery-item:focus-visible {
   outline: 2px solid var(--lime);
   outline-offset: -4px;
+}
+
+.photo-carousel-header {
+  flex-wrap: wrap;
+}
+.photo-carousel-controls {
+  align-items: center;
+}
+.photo-carousel-controls button {
+  flex: 0 0 44px;
+}
+.photo-view-mode {
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0 8px;
+  background: var(--surface);
+  color: var(--white);
+  font: inherit;
+  font-size: .875rem;
+}
+.lightbox-mode {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+.lightbox img {
+  max-height: 60dvh;
+}
+.photo-carousel-track .jeep-showcase {
+  height: clamp(250px, 42vw, 400px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  scroll-snap-align: start;
+}
+.photo-carousel-track .jeep-canvas canvas,
+.photo-carousel-track .showroom-controls {
+  visibility: hidden;
+}
+.photo-carousel-track .jeep-ready .jeep-canvas canvas,
+.photo-carousel-track .jeep-ready .showroom-controls {
+  visibility: visible;
+}
+.photo-carousel-track .showroom-label,
+.photo-carousel-track .showroom-bottom {
+  left: 12px;
+  right: 12px;
+  gap: 8px;
+}
+.photo-carousel-track .showroom-label { top: 12px; }
+.photo-carousel-track .showroom-bottom { bottom: 12px; align-items: center; }
+.photo-carousel-track .showroom-bottom p { font-size: 14px; }
+.photo-carousel-track .showroom-controls { max-width: none; }
+.photo-carousel-track .showroom-controls button {
+  pointer-events: auto;
+  min-height: 44px;
+  padding: 8px;
+  font-size: 12px;
+}
+@media (max-width: 420px) {
+  .photo-carousel-track .showroom-bottom {
+    flex-wrap: wrap;
+  }
 }
