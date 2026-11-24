@@ -127,15 +127,8 @@ h1,h2,h3,.hero h1,.services h2,.service-card h3,.selection h2,.contacts h2{word-
 .photo-carousel {
   padding-block: 24px 26px;
 }
-.photo-carousel-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 14px;
-}
-.photo-carousel-header h2 {
-  margin: 0;
+.photo-carousel > h2 {
+  margin: 0 0 14px;
   font-size: clamp(24px, 4vw, 38px);
   line-height: 1.1;
   letter-spacing: -.03em;
@@ -188,11 +181,10 @@ h1,h2,h3,.hero h1,.services h2,.service-card h3,.selection h2,.contacts h2{word-
   outline-offset: -4px;
 }
 
-.photo-carousel-header {
-  flex-wrap: wrap;
-}
 .photo-carousel-controls {
+  justify-content: center;
   align-items: center;
+  margin-top: 8px;
 }
 .photo-carousel-controls button {
   flex: 0 0 44px;
