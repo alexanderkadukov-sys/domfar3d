@@ -15,7 +15,7 @@ const [previous, next] = controls.querySelectorAll('[data-carousel-step]');
 const lightbox = $('#lightbox');
 const photoModes = document.querySelectorAll('[data-photo-mode]');
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
-const autoDelay = 2000;
+const autoDelay = 1000;
 let photoMode = 'manual';
 let carouselVisible = false;
 let playbackTimer;
