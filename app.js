@@ -8,6 +8,31 @@ document.querySelectorAll('dialog').forEach(dialog=>{
  dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
  dialog.addEventListener('close',()=>{document.body.style.overflow='';previousFocus?.focus();});
 });
+const carousel = $('#night-road');
+if (carousel) {
+ const track = carousel.querySelector('.photo-carousel-track');
+ const controls = carousel.querySelector('.photo-carousel-controls');
+ const [previous, next] = controls.querySelectorAll('button');
+
+ function updateCarouselControls() {
+  previous.disabled = track.scrollLeft <= 1;
+  next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 1;
+ }
+
+ controls.hidden = false;
+ controls.addEventListener('click', event => {
+  const button = event.target.closest('[data-carousel-step]');
+  if (!button) return;
+  const [first, second] = track.children;
+  track.scrollBy({
+   left: (second.offsetLeft - first.offsetLeft) * Number(button.dataset.carouselStep),
+   behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'
+  });
+ });
+ track.addEventListener('scroll', updateCarouselControls, { passive: true });
+ window.addEventListener('resize', updateCarouselControls);
+ updateCarouselControls();
+}
 const galleryPhotos=[...document.querySelectorAll('[data-image]')];
 let photoIndex=0;
 function displayPhoto(index){
